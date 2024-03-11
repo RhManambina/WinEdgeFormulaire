@@ -48,15 +48,6 @@ class MyCustomForm extends StatelessWidget {
                   ),
                 ),
               ),
-              // Padding(
-              //   padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-              //   child: TextFormField(
-              //     decoration: const InputDecoration(
-              //       border: UnderlineInputBorder(),
-              //       labelText: 'Nu',
-              //     ),
-              //   ),
-              // ),
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
                 child: TextField(
@@ -66,13 +57,11 @@ class MyCustomForm extends StatelessWidget {
                   ),
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-                child: ElevatedButton(
-                  onPressed: () {},
-                  child: const Text('Valider'),
-                ),
-              ),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.of(context).pushNamed("tableau");
+                  },
+                  child: const Text('Valider'))
             ],
           ),
         ),
