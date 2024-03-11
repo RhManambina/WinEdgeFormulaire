@@ -1,8 +1,18 @@
 import 'package:flutter/material.dart';
 
-class MyCustomForm extends StatelessWidget {
+class MyCustomForm extends StatefulWidget {
   const MyCustomForm({super.key});
 
+  @override
+  State<MyCustomForm> createState() => _MyCustomFormState();
+}
+
+class _MyCustomFormState extends State<MyCustomForm> {
+  final TextEditingController nomController = TextEditingController();
+  final TextEditingController prenomController = TextEditingController();
+  final TextEditingController ageController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController numeroTelephoneController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -12,46 +22,52 @@ class MyCustomForm extends StatelessWidget {
           child: Column(
             children: [
               const Center(child: Text('Formulaire')),
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+               Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
                 child: TextField(
-                  decoration: InputDecoration(
+                  controller: nomController,
+                  decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                     hintText: 'Entrée votre nom  ',
                   ),
                 ),
               ),
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+               Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
                 child: TextField(
-                  decoration: InputDecoration(
+                  controller: prenomController,
+                  decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                     hintText: 'Prenom ',
                   ),
                 ),
               ),
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+               Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
                 child: TextField(
-                  decoration: InputDecoration(
+                  controller: ageController,
+                  decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                     hintText: 'Age ',
                   ),
                 ),
               ),
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+               Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
                 child: TextField(
-                  decoration: InputDecoration(
+                  controller: emailController,
+                  decoration: const InputDecoration(
+                  
                     border: OutlineInputBorder(),
                     hintText: 'Adresse e-mail ',
                   ),
                 ),
               ),
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+               Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
                 child: TextField(
-                  decoration: InputDecoration(
+                  controller: numeroTelephoneController,
+                  decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                     hintText: 'Numero Téléphoe  ',
                   ),
