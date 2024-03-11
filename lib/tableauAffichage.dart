@@ -17,14 +17,14 @@ class TableauAffichage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DataTable(
-      columns: [
+      columns: const [
         DataColumn(label: Text('Nom')),
         DataColumn(label: Text('Prenom')),
         DataColumn(label: Text('Age')),
         DataColumn(label: Text('E-mail')),
         DataColumn(label: Text('Numero Télephone')),
       ],
-      rows: [
+      rows: const [
         DataRow(cells: [
           DataCell(Text('John')),
           DataCell(Text('25')),
