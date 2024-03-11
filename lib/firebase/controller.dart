@@ -14,7 +14,22 @@ class MyFormController {
         'numeroTelephone': numeroTelephone,
       });
     } catch (e) {
-      print('Erreur lors de l\'ajout de l\'utilisateur verfier: $e');
+      print('Erreur lors de l\'ajout de l\'utilisateur: $e');
     }
+  }
+
+  static Future<List<Map<String, dynamic>>> getUsers() async {
+    List<Map<String, dynamic>> userList = [];
+
+    try {
+      QuerySnapshot querySnapshot = await _usersCollection.get();
+      querySnapshot.docs.forEach((doc) {
+        userList.add(doc.data() as Map<String, dynamic>);
+      });
+    } catch (e) {
+      print('Erreur lors de la récupération des utilisateurs: $e');
+    }
+
+    return userList;
   }
 }
