@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mini/firebase/controller.dart';
 
 class MyCustomForm extends StatefulWidget {
   const MyCustomForm({super.key});
@@ -75,7 +76,14 @@ class _MyCustomFormState extends State<MyCustomForm> {
               ),
               ElevatedButton(
                   onPressed: () {
+                    String nom = nomController.text;
+                    String prenom = prenomController.text;
+                    int age = int.tryParse(ageController.text) ?? 0;
+                    String email = emailController.text;
+                    String numeroTelephone = numeroTelephoneController.text;
+                    MyFormController.addUser(nom, prenom, age, email, numeroTelephone);
                     Navigator.of(context).pushNamed("tableau");
+
                   },
                   child: const Text('Valider'))
             ],
