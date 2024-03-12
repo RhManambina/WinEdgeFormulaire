@@ -23,8 +23,15 @@ class _MyCustomFormState extends State<MyCustomForm> {
         Center(
           child: Column(
             children: [
-              SizedBox(
-                  width: 80, height: 80, child: Image.asset("assets/Logo.png")),
+              InkWell(
+                onTap: () {
+                  Navigator.of(context).pushNamed("tableau");
+                },
+                child: SizedBox(
+                    width: 80,
+                    height: 80,
+                    child: Image.asset("assets/Logo.png")),
+              ),
               const Center(
                   child: Text(
                 'Formulaire',
@@ -114,9 +121,8 @@ class _MyCustomFormState extends State<MyCustomForm> {
                     int age = int.tryParse(ageController.text) ?? 0;
                     String email = emailController.text;
                     String numeroTelephone = numeroTelephoneController.text;
-                    MyFormController.addUser(nom, prenom, age, email, numeroTelephone);
-                    Navigator.of(context).pushNamed("tableau");
-
+                    MyFormController.addUser(
+                        nom, prenom, age, email, numeroTelephone);
                   },
                   child: const Text(
                     'Valider',

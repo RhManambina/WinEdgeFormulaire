@@ -50,8 +50,10 @@ class _TableauAffichageState extends State<TableauAffichage> {
                           children: [
                             Text(
                               'Listes ',
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 35),
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 35,
+                              ),
                             ),
                           ],
                         ),
