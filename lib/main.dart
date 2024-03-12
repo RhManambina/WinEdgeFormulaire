@@ -24,17 +24,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const appTitle = 'Form Styling Demo';
+    //const appTitle = 'Form Styling Demo';
     return MaterialApp(
       routes: {
         'tableau': (context) => const TableauAffichage(),
       },
-      title: appTitle,
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text(appTitle),
-        ),
-        body: const MyCustomForm(),
+      //title: appTitle,
+      home: const Scaffold(
+        backgroundColor: Color.fromARGB(255, 138, 182, 219),
+        body: MyCustomForm(),
       ),
     );
   }

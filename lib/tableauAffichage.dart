@@ -11,38 +11,89 @@ class TableauAffichage extends StatefulWidget {
 class _TableauAffichageState extends State<TableauAffichage> {
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder<List<Map<String, dynamic>>>(
-      future: MyFormController.getUsers(),
-      builder: (context, snapshot) {
-        if (snapshot.connectionState == ConnectionState.waiting) {
-          return CircularProgressIndicator();
-        } else if (snapshot.hasError) {
-          return Text('Erreur: ${snapshot.error}');
-        } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
-          return Text('Aucune donnée à afficher.');
-        } else {
-          List<Map<String, dynamic>> users = snapshot.data!;
+    return Container(
+      color: Colors.blue,
+      child: FutureBuilder<List<Map<String, dynamic>>>(
+        future: MyFormController.getUsers(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const CircularProgressIndicator();
+          } else if (snapshot.hasError) {
+            return Text('Erreur: ${snapshot.error}');
+          } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
+            return const Text('Aucune donnée à afficher.');
+          } else {
+            List<Map<String, dynamic>> users = snapshot.data!;
 
-          return DataTable(
-            columns: [
-              DataColumn(label: Text('Nom')),
-              DataColumn(label: Text('Prenom')),
-              DataColumn(label: Text('Age')),
-              DataColumn(label: Text('E-mail')),
-              DataColumn(label: Text('Numero Télephone')),
-            ],
-            rows: users.map((user) {
-              return DataRow(cells: [
-                DataCell(Text(user['nom'] ?? '')),
-                DataCell(Text(user['prenom'] ?? '')),
-                DataCell(Text(user['age']?.toString() ?? '')),
-                DataCell(Text(user['email'] ?? '')),
-                DataCell(Text(user['numeroTelephone'] ?? '')),
-              ]);
-            }).toList(),
-          );
-        }
-      },
+            return SingleChildScrollView(
+              child: Container(
+                child: Column(
+                  children: [
+                    Row(
+                      children: [
+                        Row(
+                          children: [
+                            Container(
+                                width: 70,
+                                height: 70,
+                                child: Image.asset('assets/Logo.png')),
+                          ],
+                        ),
+                        const SizedBox(
+                          width: 30,
+                        ),
+                        const Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'Listes ',
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 35),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                    DataTable(
+                      columns: const [
+                        DataColumn(
+                            label: Text('Nom',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 20))),
+                        DataColumn(
+                            label: Text('Prenom',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 20))),
+                        DataColumn(
+                            label: Text('Age',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 20))),
+                        DataColumn(
+                            label: Text('E-mail',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 20))),
+                        DataColumn(
+                            label: Text('Numero Télephone',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 20))),
+                      ],
+                      rows: users.map((user) {
+                        return DataRow(cells: [
+                          DataCell(Text(user['nom'] ?? '')),
+                          DataCell(Text(user['prenom'] ?? '')),
+                          DataCell(Text(user['age']?.toString() ?? '')),
+                          DataCell(Text(user['email'] ?? '')),
+                          DataCell(Text(user['numeroTelephone'] ?? '')),
+                        ]);
+                      }).toList(),
+                    ),
+                  ],
+                ),
+              ),
+            );
+          }
+        },
+      ),
     );
   }
 }
