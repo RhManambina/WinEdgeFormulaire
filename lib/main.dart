@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mini/dialogue.dart';
+import 'package:mini/succes.dart';
 import 'package:mini/firebase/config.dart';
 import 'package:mini/meet.dart';
 import 'package:mini/tableauAffichage.dart';
