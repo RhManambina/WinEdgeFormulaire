@@ -26,6 +26,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     //const appTitle = 'Form Styling Demo';
     return MaterialApp(
+      title: 'Win-Edge',
       routes: {
         'tableau': (context) => const TableauAffichage(),
       },
