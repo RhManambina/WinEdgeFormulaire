@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mini/dialogue.dart';
 import 'package:mini/firebase/config.dart';
-import 'package:mini/formulaire.dart';
+import 'package:mini/meet.dart';
 import 'package:mini/tableauAffichage.dart';
 import 'package:firebase_core/firebase_core.dart';
 
@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
       title: 'Win-Edge',
       routes: {
         'tableau': (context) => const TableauAffichage(),
-        'dialog': (context) => const DialogueText(),
+        'succes': (context) => const DialogueText(),
       },
       //title: appTitle,
       home: const Scaffold(

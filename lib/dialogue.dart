@@ -14,9 +14,25 @@ class DialogueText extends StatelessWidget {
             width: 600,
             height: 300,
             child: Center(
-              child: Text(
-                'Votre donnée est déjà enregistré',
-                style: TextStyle(fontSize: 20),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text(
+                    'Votre donnée est enregistré',
+                    style: TextStyle(fontSize: 20),
+                  ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  ElevatedButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      child: const Text(
+                        'Retour',
+                        style: TextStyle(color: Colors.black, fontSize: 20),
+                      ))
+                ],
               ),
             ),
           )
