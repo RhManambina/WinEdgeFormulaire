@@ -28,10 +28,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       routes: {
         'tableau': (context) => const TableauAffichage(),
+        'dash': (context) => const MyCustomForm(),
       },
       //title: appTitle,
       home: const Scaffold(
-        backgroundColor: Color.fromARGB(255, 138, 182, 219),
+        backgroundColor: Colors.blue,
         body: MyCustomForm(),
       ),
     );

@@ -31,13 +31,16 @@ class _TableauAffichageState extends State<TableauAffichage> {
                   children: [
                     Row(
                       children: [
-                        Row(
-                          children: [
-                            Container(
-                                width: 70,
-                                height: 70,
-                                child: Image.asset('assets/Logo.png')),
-                          ],
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Row(
+                            children: [
+                              Container(
+                                  width: 70,
+                                  height: 70,
+                                  child: Image.asset('assets/Logo.png')),
+                            ],
+                          ),
                         ),
                         const SizedBox(
                           width: 30,
