@@ -28,7 +28,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       routes: {
         'tableau': (context) => const TableauAffichage(),
-        'dash': (context) => const MyCustomForm(),
       },
       //title: appTitle,
       home: const Scaffold(
