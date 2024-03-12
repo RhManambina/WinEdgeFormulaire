@@ -123,6 +123,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
                     String numeroTelephone = numeroTelephoneController.text;
                     MyFormController.addUser(
                         nom, prenom, age, email, numeroTelephone);
+                    Navigator.of(context).pushNamed("dialog");
                   },
                   child: const Text(
                     'Valider',
