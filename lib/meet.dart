@@ -25,7 +25,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
             children: [
               InkWell(
                 onTap: () {
-                  Navigator.of(context).pushNamed("tableau");
+                  Navigator.of(context).pushNamed("meet");
                 },
                 child: SizedBox(
                     width: 80,
@@ -34,7 +34,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
               ),
               const Center(
                   child: Text(
-                'Formulaire',
+                'Inscription pour le meet et les investisseurs',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 20,

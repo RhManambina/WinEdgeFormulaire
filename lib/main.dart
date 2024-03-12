@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Win-Edge',
       routes: {
-        'tableau': (context) => const TableauAffichage(),
+        'meet': (context) => const TableauAffichage(),
         'succes': (context) => const DialogueText(),
       },
       //title: appTitle,
