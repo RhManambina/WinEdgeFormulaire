@@ -81,6 +81,11 @@ class _TableauAffichageState extends State<TableauAffichage> {
                             label: Text('Numero Télephone',
                                 style: TextStyle(
                                     color: Colors.white, fontSize: 20))),
+                        DataColumn(
+                            label: Text(
+                                'Inscription meet présentation d\'un concept explosif',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 20))),
                       ],
                       rows: users.map((user) {
                         return DataRow(cells: [

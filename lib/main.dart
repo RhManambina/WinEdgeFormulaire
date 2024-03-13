@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mini/succes.dart';
 import 'package:mini/firebase/config.dart';
 import 'package:mini/meet.dart';
-import 'package:mini/tableauAffichage.dart';
+import 'package:mini/listemeet.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 void main() async {
@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Win-Edge',
       routes: {
-        'tableau': (context) => const TableauAffichage(),
+        'listemeet': (context) => const TableauAffichage(),
         'succes': (context) => const DialogueText(),
       },
       //title: appTitle,

@@ -17,122 +17,149 @@ class _MyCustomFormState extends State<MyCustomForm> {
       TextEditingController();
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        Center(
-          child: Column(
-            children: [
-              InkWell(
-                onTap: () {
-                  Navigator.of(context).pushNamed("tableau");
-                },
-                child: SizedBox(
-                    width: 80,
-                    height: 80,
-                    child: Image.asset("assets/Logo.png")),
-              ),
-              const Center(
-                  child: Text(
-                'Formulaire',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
+    return SingleChildScrollView(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Center(
+            child: Column(
+              children: [
+                const SizedBox(
+                  height: 30,
                 ),
-              )),
-              Container(
-                width: 800,
-                child: Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-                  child: TextField(
-                    controller: nomController,
-                    decoration: const InputDecoration(
-                      border: OutlineInputBorder(),
-                      hintText: 'Nom  ',
-                      hintStyle: TextStyle(color: Colors.white, fontSize: 16),
-                    ),
-                  ),
+                const Text(
+                  'Inscription meet présentation d\'un concept explosif',
+                  style: TextStyle(fontSize: 18, color: Colors.white),
                 ),
-              ),
-              Container(
-                width: 800,
-                child: Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-                  child: TextField(
-                    controller: prenomController,
-                    decoration: const InputDecoration(
-                      border: OutlineInputBorder(),
-                      hintText: 'Prenom ',
-                      hintStyle: TextStyle(color: Colors.white, fontSize: 16),
-                    ),
-                  ),
+                const SizedBox(
+                  height: 30,
                 ),
-              ),
-              Container(
-                width: 800,
-                child: Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-                  child: TextField(
-                    controller: ageController,
-                    decoration: const InputDecoration(
-                      border: OutlineInputBorder(),
-                      hintText: 'Age ',
-                      hintStyle: TextStyle(color: Colors.white, fontSize: 16),
-                    ),
-                  ),
-                ),
-              ),
-              Container(
-                width: 800,
-                child: Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-                  child: TextField(
-                    controller: emailController,
-                    decoration: const InputDecoration(
-                      border: OutlineInputBorder(),
-                      hintText: 'Adresse e-mail ',
-                      hintStyle: TextStyle(color: Colors.white, fontSize: 16),
-                    ),
-                  ),
-                ),
-              ),
-              Container(
-                width: 800,
-                child: Padding(
+                Container(
+                  width: 800,
+                  child: Padding(
                     padding:
                         const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
                     child: TextField(
-                      controller: numeroTelephoneController,
+                      controller: nomController,
                       decoration: const InputDecoration(
                         border: OutlineInputBorder(),
-                        hintText: 'Numero Téléphone  ',
+                        hintText: 'Nom  ',
                         hintStyle: TextStyle(color: Colors.white, fontSize: 16),
                       ),
-                    )),
-              ),
-              ElevatedButton(
-                  onPressed: () {
-                    String nom = nomController.text;
-                    String prenom = prenomController.text;
-                    int age = int.tryParse(ageController.text) ?? 0;
-                    String email = emailController.text;
-                    String numeroTelephone = numeroTelephoneController.text;
-                    MyFormController.addUser(
-                        nom, prenom, age, email, numeroTelephone);
-                    Navigator.of(context).pushNamed("succes");
-                  },
-                  child: const Text(
-                    'Valider',
-                    style: TextStyle(fontSize: 30),
-                  ))
-            ],
+                    ),
+                  ),
+                ),
+                Container(
+                  width: 800,
+                  child: Padding(
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+                    child: TextField(
+                      controller: prenomController,
+                      decoration: const InputDecoration(
+                        border: OutlineInputBorder(),
+                        hintText: 'Prenom ',
+                        hintStyle: TextStyle(color: Colors.white, fontSize: 16),
+                      ),
+                    ),
+                  ),
+                ),
+                Container(
+                  width: 800,
+                  child: Padding(
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+                    child: TextField(
+                      controller: ageController,
+                      decoration: const InputDecoration(
+                        border: OutlineInputBorder(),
+                        hintText: 'Age ',
+                        hintStyle: TextStyle(color: Colors.white, fontSize: 16),
+                      ),
+                    ),
+                  ),
+                ),
+                Container(
+                  width: 800,
+                  child: Padding(
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+                    child: TextField(
+                      controller: emailController,
+                      decoration: const InputDecoration(
+                        border: OutlineInputBorder(),
+                        hintText: 'Adresse e-mail ',
+                        hintStyle: TextStyle(color: Colors.white, fontSize: 16),
+                      ),
+                    ),
+                  ),
+                ),
+                Container(
+                  width: 800,
+                  child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 8, vertical: 16),
+                      child: TextField(
+                        controller: numeroTelephoneController,
+                        decoration: const InputDecoration(
+                          border: OutlineInputBorder(),
+                          hintText: 'Numero Téléphone  ',
+                          hintStyle:
+                              TextStyle(color: Colors.white, fontSize: 16),
+                        ),
+                      )),
+                ),
+                Container(
+                  width: 800,
+                  child: const Padding(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+                      child: TextField(
+                        maxLines: null,
+                        // controller: numeroTelephoneController,
+                        decoration: InputDecoration(
+                          border: OutlineInputBorder(),
+                          hintText:
+                              'Par qui vous avez été invité ou comment nous avez connu ',
+                          hintStyle:
+                              TextStyle(color: Colors.white, fontSize: 16),
+                        ),
+                      )),
+                ),
+                ElevatedButton(
+                    onPressed: () {
+                      String nom = nomController.text;
+                      String prenom = prenomController.text;
+                      int age = int.tryParse(ageController.text) ?? 0;
+                      String email = emailController.text;
+                      String numeroTelephone = numeroTelephoneController.text;
+                      MyFormController.addUser(
+                          nom, prenom, age, email, numeroTelephone);
+
+                      nomController.clear();
+                      prenomController.clear();
+                      ageController.clear();
+                      emailController.clear();
+                      numeroTelephoneController.clear();
+
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text('Données enregistrées avec succès!'),
+                          duration: Duration(seconds: 5),
+                        ),
+                      );
+
+                      Navigator.of(context).pushNamed("succes");
+                    },
+                    child: const Text(
+                      'Valider',
+                      style: TextStyle(fontSize: 30),
+                    ))
+              ],
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
