@@ -25,12 +25,16 @@ class _MyCustomFormState extends State<MyCustomForm> {
             child: Column(
               children: [
                 const SizedBox(
-                  height: 30,
+                  height: 20,
                 ),
-                const Text(
+                const Center(
+                    child: Text(
                   'Inscription meet présentation d\'un concept explosif',
-                  style: TextStyle(fontSize: 18, color: Colors.white),
-                ),
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                  ),
+                )),
                 const SizedBox(
                   height: 30,
                 ),
@@ -111,16 +115,31 @@ class _MyCustomFormState extends State<MyCustomForm> {
                 ),
                 Container(
                   width: 800,
-                  child: const Padding(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+                  child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 8, vertical: 16),
+                      child: TextField(
+                        controller: numeroTelephoneController,
+                        decoration: const InputDecoration(
+                          border: OutlineInputBorder(),
+                          hintText: 'Numero Téléphone  ',
+                          hintStyle:
+                              TextStyle(color: Colors.white, fontSize: 16),
+                        ),
+                      )),
+                ),
+                Container(
+                  width: 800,
+                  child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 8, vertical: 16),
                       child: TextField(
                         maxLines: null,
-                        // controller: numeroTelephoneController,
-                        decoration: InputDecoration(
+                        controller: numeroTelephoneController,
+                        decoration: const InputDecoration(
                           border: OutlineInputBorder(),
                           hintText:
-                              'Par qui vous avez été invité ou comment nous avez connu ',
+                              'Par qui vous avez été invité ou comment nous avez connu  ',
                           hintStyle:
                               TextStyle(color: Colors.white, fontSize: 16),
                         ),
@@ -135,20 +154,6 @@ class _MyCustomFormState extends State<MyCustomForm> {
                       String numeroTelephone = numeroTelephoneController.text;
                       MyFormController.addUser(
                           nom, prenom, age, email, numeroTelephone);
-
-                      nomController.clear();
-                      prenomController.clear();
-                      ageController.clear();
-                      emailController.clear();
-                      numeroTelephoneController.clear();
-
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                          content: Text('Données enregistrées avec succès!'),
-                          duration: Duration(seconds: 5),
-                        ),
-                      );
-
                       Navigator.of(context).pushNamed("succes");
                     },
                     child: const Text(
