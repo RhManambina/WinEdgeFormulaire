@@ -4,7 +4,7 @@ class MyFormController {
   static final CollectionReference _usersCollection =
       FirebaseFirestore.instance.collection('users');
 
-  static Future<void> addUser(String nom, String prenom, int age, String email, String numeroTelephone) async {
+  static Future<void> addUser(String nom, String prenom, int age, String email, String numeroTelephone,String info) async {
     try {
       await _usersCollection.add({
         'nom': nom,
@@ -12,6 +12,7 @@ class MyFormController {
         'age': age,
         'email': email,
         'numeroTelephone': numeroTelephone,
+        'info': info,
       });
     } catch (e) {
       print('Erreur lors de l\'ajout de l\'utilisateur: $e');

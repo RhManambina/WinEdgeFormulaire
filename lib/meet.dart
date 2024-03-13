@@ -15,6 +15,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController numeroTelephoneController =
       TextEditingController();
+  final TextEditingController infoController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -120,7 +121,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
                           horizontal: 8, vertical: 16),
                       child: TextField(
                         maxLines: null,
-                        controller: numeroTelephoneController,
+                        controller: infoController,
                         decoration: const InputDecoration(
                           border: OutlineInputBorder(),
                           hintText:
@@ -137,8 +138,15 @@ class _MyCustomFormState extends State<MyCustomForm> {
                       int age = int.tryParse(ageController.text) ?? 0;
                       String email = emailController.text;
                       String numeroTelephone = numeroTelephoneController.text;
+                      String info = infoController.text;
                       MyFormController.addUser(
-                          nom, prenom, age, email, numeroTelephone);
+                          nom, prenom, age, email, numeroTelephone, info);
+                      nomController.clear();
+                      prenomController.clear();
+                      ageController.clear();
+                      emailController.clear();
+                      numeroTelephoneController.clear();
+                      infoController.clear();
                       Navigator.of(context).pushNamed("succes");
                     },
                     child: const Text(

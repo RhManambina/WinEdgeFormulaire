@@ -94,6 +94,7 @@ class _TableauAffichageState extends State<TableauAffichage> {
                           DataCell(Text(user['age']?.toString() ?? '')),
                           DataCell(Text(user['email'] ?? '')),
                           DataCell(Text(user['numeroTelephone'] ?? '')),
+                          DataCell(Text(user['info'] ?? '')),
                         ]);
                       }).toList(),
                     ),
