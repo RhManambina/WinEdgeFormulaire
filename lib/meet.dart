@@ -25,7 +25,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
             child: Column(
               children: [
                 const SizedBox(
-                  height: 20,
+                  height: 15,
                 ),
                 const Center(
                     child: Text(
@@ -97,21 +97,6 @@ class _MyCustomFormState extends State<MyCustomForm> {
                       ),
                     ),
                   ),
-                ),
-                Container(
-                  width: 800,
-                  child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 8, vertical: 16),
-                      child: TextField(
-                        controller: numeroTelephoneController,
-                        decoration: const InputDecoration(
-                          border: OutlineInputBorder(),
-                          hintText: 'Numero Téléphone  ',
-                          hintStyle:
-                              TextStyle(color: Colors.white, fontSize: 16),
-                        ),
-                      )),
                 ),
                 Container(
                   width: 800,
