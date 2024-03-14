@@ -120,6 +120,21 @@ class _MyCustomFormState extends State<MyCustomForm> {
                       padding: const EdgeInsets.symmetric(
                           horizontal: 8, vertical: 16),
                       child: TextField(
+                        controller: numeroTelephoneController,
+                        decoration: const InputDecoration(
+                          border: OutlineInputBorder(),
+                          hintText: 'Pays ',
+                          hintStyle:
+                              TextStyle(color: Colors.white, fontSize: 16),
+                        ),
+                      )),
+                ),
+                Container(
+                  width: 800,
+                  child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 8, vertical: 16),
+                      child: TextField(
                         maxLines: null,
                         controller: infoController,
                         decoration: const InputDecoration(
