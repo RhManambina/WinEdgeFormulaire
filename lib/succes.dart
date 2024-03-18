@@ -19,9 +19,6 @@ class _DialogueTextState extends State<DialogueText> {
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
               colors: [
-            // Color.fromRGBO(171, 115, 59, 1), // Original color
-            // Color(0xFFB5924D),
-            // Color.fromARGB(255, 199, 202, 31),
             Color.fromARGB(255, 62, 135, 199),
             Color.fromRGBO(84, 173, 212, 1),
             Color(0xFFCBAF69), // Original color
@@ -30,17 +27,6 @@ class _DialogueTextState extends State<DialogueText> {
             Color.fromRGBO(84, 173, 212, 1),
             Color.fromARGB(255, 62, 135, 199),
           ])),
-      // decoration: const BoxDecoration(
-      //     gradient: LinearGradient(
-      //         begin: Alignment.topCenter,
-      //         end: Alignment.bottomCenter,
-      //         colors: [
-      //       Color.fromARGB(255, 110, 179, 214), // Original color
-      //       Color.fromARGB(255, 135, 145, 210),
-      //       Color.fromARGB(255, 79, 90, 150),
-      //       Color.fromRGBO(84, 173, 212, 1),
-      //       Color.fromARGB(255, 62, 135, 199),
-      //     ])),
       child: Container(
           child: SimpleDialog(
         children: [
