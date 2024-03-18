@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-class DialogueText extends StatelessWidget {
+class DialogueText extends StatefulWidget {
   const DialogueText({super.key});
+
+  @override
+  State<DialogueText> createState() => _DialogueTextState();
+}
+
+class _DialogueTextState extends State<DialogueText> {
+  final Uri _url = Uri.parse('https://meet.google.com/xvh-vnhp-rci');
 
   @override
   Widget build(BuildContext context) {
@@ -43,9 +51,24 @@ class DialogueText extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text(
-                    'Votre donnée est enregistré',
-                    style: TextStyle(fontSize: 20),
+                  Column(
+                    children: [
+                      const Text(
+                        'Merci de vous connecter a ce meet ',
+                        style: TextStyle(fontSize: 20, color: Colors.blue),
+                      ),
+                      const Text('a l\'heure indiqué par votre contact',
+                          style: TextStyle(fontSize: 20, color: Colors.blue)),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      InkWell(
+                        onTap: _launchUrl,
+                        child: const Text(
+                          'https://meet.google.com/xvh-vnhp-rci',
+                        ),
+                      )
+                    ],
                   ),
                   const SizedBox(
                     height: 30,
@@ -56,7 +79,10 @@ class DialogueText extends StatelessWidget {
                       },
                       child: const Text(
                         'Retour',
-                        style: TextStyle(color: Colors.black, fontSize: 20),
+                        style: TextStyle(
+                          color: Colors.blue,
+                          fontSize: 20,
+                        ),
                       ))
                 ],
               ),
@@ -65,5 +91,11 @@ class DialogueText extends StatelessWidget {
         ],
       )),
     );
+  }
+
+  Future<void> _launchUrl() async {
+    if (!await launchUrl(_url)) {
+      throw Exception('Could not launch $_url');
+    }
   }
 }
