@@ -87,6 +87,10 @@ class _TableauAffichageState extends State<TableauAffichage> {
                                 style: TextStyle(
                                     color: Colors.black, fontSize: 20))),
                         DataColumn(
+                            label: Text('Pays',
+                                style: TextStyle(
+                                    color: Colors.black, fontSize: 20))),
+                        DataColumn(
                             label: Text(
                                 'Par qui vous avez été invité ou comment nous avez connu ',
                                 style: TextStyle(
@@ -100,6 +104,7 @@ class _TableauAffichageState extends State<TableauAffichage> {
                           DataCell(Text(user['email'] ?? '')),
                           DataCell(Text(user['numeroTelephone'] ?? '')),
                           DataCell(Text(user['info'] ?? '')),
+                          DataCell(Text(user['pays'] ?? '')),
                         ]);
                       }).toList(),
                     ),

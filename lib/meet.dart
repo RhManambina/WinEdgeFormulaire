@@ -16,6 +16,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
   final TextEditingController numeroTelephoneController =
       TextEditingController();
   final TextEditingController infoController = TextEditingController();
+  final TextEditingController paysController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -158,7 +159,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
                             padding: const EdgeInsets.symmetric(
                                 horizontal: 8, vertical: 16),
                             child: TextField(
-                              controller: numeroTelephoneController,
+                              controller: paysController,
                               decoration: const InputDecoration(
                                 border: OutlineInputBorder(
                                     borderRadius: BorderRadius.all(
@@ -190,42 +191,6 @@ class _MyCustomFormState extends State<MyCustomForm> {
                       const SizedBox(
                         height: 10,
                       ),
-                      // Column(
-                      //   crossAxisAlignment: CrossAxisAlignment.end,
-                      //   children: [
-                      //     ElevatedButton(
-                      //         onPressed: () {
-                      //           String nom = nomController.text;
-                      //           String prenom = prenomController.text;
-                      //           int age = int.tryParse(ageController.text) ?? 0;
-                      //           String email = emailController.text;
-                      //           String numeroTelephone =
-                      //               numeroTelephoneController.text;
-                      //           String info = infoController.text;
-                      //           MyFormController.addUser(nom, prenom, age,
-                      //               email, numeroTelephone, info);
-                      //           nomController.clear();
-                      //           prenomController.clear();
-                      //           ageController.clear();
-                      //           emailController.clear();
-                      //           numeroTelephoneController.clear();
-                      //           infoController.clear();
-                      //           Navigator.of(context).pushNamed("succes");
-                      //         },
-                      //         child: const Column(
-                      //           crossAxisAlignment: CrossAxisAlignment.end,
-                      //           children: [
-                      //             Text(
-                      //               'Valider',
-                      //               style: TextStyle(
-                      //                   fontSize: 12, color: Colors.white),
-                      //             ),
-
-                      //           ],
-                      //         )),
-                      //   ],
-                      // ),
-
                       Padding(
                         padding: const EdgeInsets.only(left: 60, right: 20),
                         child: Container(
@@ -242,6 +207,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
                                 String numeroTelephone =
                                     numeroTelephoneController.text;
                                 String info = infoController.text;
+                                String pays = paysController.text;
                                 MyFormController.addUser(
                                   nom,
                                   prenom,
@@ -249,6 +215,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
                                   email,
                                   numeroTelephone,
                                   info,
+                                  pays,
                                 );
                                 nomController.clear();
                                 prenomController.clear();
@@ -256,6 +223,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
                                 emailController.clear();
                                 numeroTelephoneController.clear();
                                 infoController.clear();
+                                paysController.clear();
                                 Navigator.of(context).pushNamed("succes");
                               },
                               child: Text(
