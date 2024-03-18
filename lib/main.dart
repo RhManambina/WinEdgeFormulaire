@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mini/investisseur.dart';
 import 'package:mini/succes.dart';
 import 'package:mini/firebase/config.dart';
 import 'package:mini/meet.dart';
@@ -31,11 +32,32 @@ class MyApp extends StatelessWidget {
       routes: {
         'tableau': (context) => const TableauAffichage(),
         'succes': (context) => const DialogueText(),
+        'investisseur': (context) => const Investisseur(),
       },
       //title: appTitle,
-      home: const Scaffold(
-        backgroundColor: Colors.blue,
-        body: MyCustomForm(),
+      home: Scaffold(
+        backgroundColor: Colors.transparent, // make background transparent
+        body: Container(
+          decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                // Color.fromRGBO(171, 115, 59, 1), // Original color
+                // Color(0xFFB5924D),
+                // Color.fromARGB(255, 199, 202, 31),
+                Color.fromARGB(255, 62, 135, 199),
+                Color.fromRGBO(84, 173, 212, 1),
+                Color(0xFFCBAF69), // Original color
+                Color.fromARGB(255, 62, 135, 199),
+                Color(0xFFA48465),
+                Color.fromRGBO(84, 173, 212, 1),
+                Color.fromARGB(255, 62, 135, 199),
+              ])),
+          child: const MyCustomForm(),
+        ),
+
+        // body: MyCustomForm(),
       ),
     );
   }

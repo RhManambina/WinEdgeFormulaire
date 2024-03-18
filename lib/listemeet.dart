@@ -12,7 +12,7 @@ class _TableauAffichageState extends State<TableauAffichage> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.blue,
+      color: Colors.white54,
       child: FutureBuilder<List<Map<String, dynamic>>>(
         future: MyFormController.getUsers(),
         builder: (context, snapshot) {
@@ -26,6 +26,7 @@ class _TableauAffichageState extends State<TableauAffichage> {
             List<Map<String, dynamic>> users = snapshot.data!;
 
             return SingleChildScrollView(
+              // scrollDirection: Axis.horizontal,
               child: Container(
                 child: Column(
                   children: [
@@ -36,56 +37,60 @@ class _TableauAffichageState extends State<TableauAffichage> {
                           child: Row(
                             children: [
                               Container(
-                                  width: 70,
-                                  height: 70,
+                                  width: 100,
+                                  height: 100,
                                   child: Image.asset('assets/Logo.png')),
                             ],
                           ),
                         ),
-                        const SizedBox(
-                          width: 30,
-                        ),
-                        const Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              'Listes ',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 35,
-                              ),
-                            ),
-                          ],
-                        ),
+                        // const SizedBox(
+                        //   width: 30,
+                        // ),
+                        // const Row(
+                        //   mainAxisAlignment: MainAxisAlignment.center,
+                        //   children: [
+                        //     Text(
+                        //       'Listes ',
+                        //       style: TextStyle(
+                        //         color: Colors.black,
+                        //         fontSize: 35,
+                        //       ),
+                        //     ),
+                        //   ],
+                        // ),
                       ],
+                    ),
+                    const Text(
+                      'Listes des personnes qui fait le meet',
+                      style: TextStyle(fontSize: 14),
                     ),
                     DataTable(
                       columns: const [
                         DataColumn(
                             label: Text('Nom',
                                 style: TextStyle(
-                                    color: Colors.white, fontSize: 20))),
+                                    color: Colors.black, fontSize: 20))),
                         DataColumn(
                             label: Text('Prenom',
                                 style: TextStyle(
-                                    color: Colors.white, fontSize: 20))),
+                                    color: Colors.black, fontSize: 20))),
                         DataColumn(
                             label: Text('Age',
                                 style: TextStyle(
-                                    color: Colors.white, fontSize: 20))),
+                                    color: Colors.black, fontSize: 20))),
                         DataColumn(
                             label: Text('E-mail',
                                 style: TextStyle(
-                                    color: Colors.white, fontSize: 20))),
+                                    color: Colors.black, fontSize: 20))),
                         DataColumn(
                             label: Text('Numero Télephone',
                                 style: TextStyle(
-                                    color: Colors.white, fontSize: 20))),
+                                    color: Colors.black, fontSize: 20))),
                         DataColumn(
                             label: Text(
-                                'Inscription meet présentation d\'un concept explosif',
+                                'Par qui vous avez été invité ou comment nous avez connu ',
                                 style: TextStyle(
-                                    color: Colors.white, fontSize: 20))),
+                                    color: Colors.black, fontSize: 20))),
                       ],
                       rows: users.map((user) {
                         return DataRow(cells: [
